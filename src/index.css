@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+:root {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+.loading span {
+  width: 4px;
+  height: 40px;
+  background-color: #33eefd;
+  animation: scale 0.9s ease-in-out infinite;
+}
+.loading span:nth-child(2) {
+  background-color: #ddff30;
+  animation-delay: -0.8s;
+}
+.loading span:nth-child(3) {
+  background-color: #aaaad4;
+  animation-delay: -0.6s;
+}
+.loading span:nth-child(4) {
+  background-color: #22eddeff;
+  animation-delay: -0.4s;
+}
+.loading span:nth-child(5) {
+  background-color: #7ee814ff;
+  animation-delay: -0.2s;
+}
+
+@keyframes scale {
+  0%,
+  40%,
+  100% {
+    transform: scaleY(0.05);
+  }
+  20% {
+    transform: scaleY(1);
+  }
+}
