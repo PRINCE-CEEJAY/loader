@@ -25,14 +25,15 @@ export default function Advice() {
     <div className="flex flex-col justify-center items-center ">
       <AnimatePresence mode='wait'>
      {loading ? <Loading/>: <motion.h1 className="px-3 py-1 rounded-xl font-bold text-2xl text-center bg-amber-900" 
-     initial={{scale: 0.5, opacity: 0}}
-     animate={{scale: 1, opacity: 1}}
-     exit={{scale: 0.5, opacity: 0}}
-     transition={{duration: 0.9s}}
+     initial={{scale: 0.5, opacity: 0, translateY: -100}}
+     animate={{scale: 1, opacity: 1, translateY: 0}}
+     exit={{scale: 0.5, opacity: 0, translateY: 100}}
+     transition={{duration: 0.7}}
+     key={Math.random()}
      >{advice}</motion.h1>
     }
       <button className='px-3 py-1 rounded-full bg-green-700 text-white font-bold hover:bg-transparent hover:border-2 cursor-pointer mt-6' onClick={fetchAdvice} disabled={loading}>Fetch More </button>
-    </AnimatePresence/>
+    </AnimatePresence>
     </div>
   )
 }
